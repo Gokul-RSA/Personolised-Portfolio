@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary-color: #52489C;
+  --primary-dark: #1F252E;
+  --text-light: #ffffff;
+  --text-dark: #000000;
+  --bg-light: #ffffff;
+  --bg-dark: #1F252E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.container {
+  padding: 2rem 8vw;
+}
+
+header {
+  box-shadow: 0 4px 17px rgba(0, 0, 0, .1);
+  background-color: var(--bg-light);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--text-dark);
+}
+
+ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+li a {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 36px;
+  color: var(--text-dark);
+  transition: 0.3s;
+}
+
+li a:hover,
+li a.active-link {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.menu {
+  display: none;
+}
+
+.mode i {
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social a {
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+}
+
+.social a:hover {
+  background-color: #3e3780;
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+.images {
+  margin-left: auto;
+  width: 350px;
+  height: 350px;
+  text-align: center;
+  overflow: hidden;
+  background-color: var(--primary-color);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.images img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+section {
+  padding: 4rem 0;
+  scroll-margin-top: 100px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+}
+
+input,
+textarea,
+button {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #3e3780;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.skill-item {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #e0e0e0;
+}
+
+.dark-mode .skill-item {
+  background-color: #2e2e2e;
+  color: #fff;
+}
+
+/* Project Cards */
+.project-card {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .project-card {
+  background-color: #2e2e2e;
+  color: #fff;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.dark-mode .logo a,
+.dark-mode li a,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p {
+  color: var(--text-light);
+}
+
+.dark-mode li a.active-link,
+.dark-mode li a:hover {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.dark-mode header,
+.dark-mode form {
+  background-color: var(--bg-dark);
+}
+
+.dark-mode input,
+.dark-mode textarea {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+/* Resume Button */
+.resume-button {
+  margin-top: 1rem;
+}
+
+.resume-button a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.resume-button a:hover {
+  background-color: #3e3780;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .page-header {
+    flex-wrap: wrap;
+  }
+  ul {
+    flex-direction: column;
+    background-color: var(--bg-dark);
+    position: absolute;
+    top: 4rem;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.3s ease-in-out;
+  }
+  #click:checked ~ ul {
+    left: 0;
+  }
+  .menu {
+    display: block;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    cursor: pointer;
+  }
+  .dark-mode ul {
+    background-color: var(--bg-dark);
+  }
+  .images {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+/* Hide mobile nav checkbox */
+#click {
+  display: none;
+}
+
+
+/* Resume Download Button Style */
+.resume-download {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+  margin-top: 1rem;
+}
+
+.resume-download:hover {
+  background-color: #3e3780;
+}
